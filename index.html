@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>$templateCache</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular-route.min.js"></script>
+    <script src="index.js"></script>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+  </head>
+  <body ng-app="app">
+    <div ng-controller='ListCntrl' >
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Address</th>
+          <th>Street</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zip</th>
+        </tr>
+        <tr >
+          <td data-title="'Name'">
+            <input   type="text" ng-model='newUser.name'>
+          </td>
+          <td data-title="'Email'">
+            <input  ng-model='newUser.email' type="email"/>
+          </td>
+          <td data-title="'Phone'">
+            <input  ng-model='newUser.phone' type="tel"/>
+          </td>
+          <td data-title="'Adress'">
+            <input  ng-model='newUser.address' type="text"/>
+          </td>
+          <td data-title="'Street'">
+            <input ng-model='newUser.street' type="text">
+          </td>
+          <td data-title="'City'">
+            <input ng-model='newUser.city' type="text">
+          </td>
+          <td data-title="'State'">
+            <input ng-model='newUser.state' type="text">
+          </td>
+          <td data-title="'Zip'">
+            <input ng-model='newUser.zip' type="text">
+          </td>
+          <td>
+            <button name="button" ng-click="add()" type="button">Add new user</button>
+          </td>
+        </tr>
+        <tr ng-repeat='user in users'>
+          <td data-name='{{user.name}}'>
+            {{user.name}}
+          </td>
+          <td data-email='{{user.email}}'>
+            {{user.email}}
+          </td>
+          <td data-phone='{{user.phone}}'>
+            {{user.phone}}
+          </td>
+          <td data-address='{{user.address}}'>
+            {{user.address}}
+          </td>
+          <td data-street='{{user.street}}'>
+            {{user.street}}
+          </td>
+          <td data-city='{{user.city}}'>
+            {{user.city}}
+          </td data-state='{{user.state}}'>
+          <td>
+            {{user.state}}
+          </td>
+          <td data-zip='{{user.zip}}'>
+            {{user.zip}}
+          </td>
+          <td  >
+            <button name="button" ng-click="delUser()" type="button">
+              delete user</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    
+  </body>
+</html>
